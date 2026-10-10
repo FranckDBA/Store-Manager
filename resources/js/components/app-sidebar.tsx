@@ -48,19 +48,24 @@ export function AppSidebar() {
                 <SidebarMenu>
                     <SidebarMenuItem>
                         <SidebarMenuButton
-                            size="lg"
-                            className="h-20"
                             asChild
+                            size="lg"
+                            className="h-20 p-0"
                         >
-                            <Link href={dashboard()} prefetch>
-                                <AppLogo
-                                    className="
-                                        h-16 w-16
-                                        object-contain
-                                        group-data-[collapsible=icon]:h-8
-                                        group-data-[collapsible=icon]:w-8
-                                    "
-                                />
+                            <Link
+                                href={dashboard()}
+                                prefetch
+                                className="flex h-20 w-full items-center justify-center"
+                            >
+                                <div className="flex h-50 w-full items-center justify-center">
+                                    <AppLogo
+                                        className="
+                                            h-40 w-40 shrink-0 object-contain
+                                            group-data-[collapsible=icon]:h-8
+                                            group-data-[collapsible=icon]:w-8
+                                        "
+                                    />
+                                </div>
                             </Link>
                         </SidebarMenuButton>
                     </SidebarMenuItem>
@@ -77,3 +82,4 @@ export function AppSidebar() {
         </Sidebar>
     );
 }
+

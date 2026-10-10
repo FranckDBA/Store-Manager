@@ -31,7 +31,14 @@ export default function AuthCardLayout({
                     href={home()}
                     className="flex justify-center"
                 >
-                    <AppLogoIcon className="h-32 w-32 object-contain" />
+                    <AppLogoIcon
+                    className="
+                        h-40 w-40
+                        object-contain
+                        group-data-[collapsible=icon]:h-8
+                        group-data-[collapsible=icon]:w-8
+                    "
+                    />
                 </Link>
 
                 {/* Formulaire */}

@@ -9,7 +9,7 @@ export default function AppLogo() {
         <>
             <div className="text-sidebar-primary-foreground flex size-30 items-center justify-center rounded-md">
                 <AppLogoIcon
-                    className="h-25 w-25 object-contain"
+                    className="h-20 w-40 object-contain"
                 />
             </div>
 
