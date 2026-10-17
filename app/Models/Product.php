@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
     'name',
     'description',
     'price',
+    'purchase_price',
     'stock',
     'image',
     'is_active',
@@ -21,6 +22,7 @@ class Product extends Model
     {
         return [
             'price' => 'decimal:2',
+            'purchase_price'=> 'decimal:2',
             'stock' => 'integer',
             'is_active' => 'boolean',
         ];

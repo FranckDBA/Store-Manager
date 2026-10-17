@@ -43,6 +43,7 @@ class CheckoutController extends Controller
                     'product_id' => $product->id,
                     'product_name' => $product->name,
                     'unit_price' => $product->price,
+                    'unit_cost' => $product->purchase_price,
                     'quantity' => $item['quantity'],
                     'subtotal' => round($subtotal, 2),
                 ];

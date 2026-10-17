@@ -7,6 +7,7 @@ import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import ProductForm from "./product-form";
+import {formatPrice} from '@/lib/formatPrice';
 
 interface Props {
     products: Product[];
@@ -131,7 +132,7 @@ export default function ProductIndex({
 
                                     {/* Price */}
                                     <td className="px-4 py-3 text-right">
-                                        ${product.price}
+                                        {formatPrice(product.price)}
                                     </td>
 
                                     {/* Stock */}

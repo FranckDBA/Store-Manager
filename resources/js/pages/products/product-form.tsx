@@ -47,6 +47,7 @@ export default function ProductForm({
         category_id: product?.category_id?.toString() ?? "",
         description: product?.description ?? "",
         price: product?.price?.toString() ?? "",
+        purchase_price:product?.purchase_price?.toString() ?? '',
         stock: product?.stock?.toString() ?? "0",
         is_active: product?.is_active ?? true,
         image: null as File | null,
@@ -166,12 +167,33 @@ export default function ProductForm({
                         />
                     </div>
 
-                    {/* Price + Stock */}
-                    <div className="grid grid-cols-2 gap-4">
-                        {/* Price */}
+                    {/* Purchase Price + Selling Price + Stock */}
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        {/* Purchase Price */}
+                        <div className="space-y-2">
+                            <Label htmlFor="purchase_price">
+                                Purchase Price (CDF)
+                            </Label>
+
+                            <Input
+                                id="purchase_price"
+                                type="number"
+                                step="0.01"
+                                min="0"
+                                value={data.purchase_price}
+                                onChange={(e) =>
+                                    setData("purchase_price", e.target.value)
+                                }
+                                placeholder="0.00"
+                            />
+
+                            <InputError message={errors.purchase_price} />
+                        </div>
+
+                        {/* Selling Price */}
                         <div className="space-y-2">
                             <Label htmlFor="price">
-                                Price (CDF)
+                                Selling Price (CDF)
                             </Label>
 
                             <Input
@@ -181,42 +203,31 @@ export default function ProductForm({
                                 min="0.01"
                                 value={data.price}
                                 onChange={(e) =>
-                                    setData(
-                                        "price",
-                                        e.target.value
-                                    )
+                                    setData("price", e.target.value)
                                 }
                                 placeholder="0.00"
                             />
 
-                            <InputError
-                                message={errors.price}
-                            />
+                            <InputError message={errors.price} />
                         </div>
 
                         {/* Stock */}
                         <div className="space-y-2">
-                            <Label htmlFor="stock">
-                                Stock
-                            </Label>
+                            <Label htmlFor="stock">Stock</Label>
 
                             <Input
                                 id="stock"
                                 type="number"
                                 min="0"
+                                step="1"
                                 value={data.stock}
                                 onChange={(e) =>
-                                    setData(
-                                        "stock",
-                                        e.target.value
-                                    )
+                                    setData("stock", e.target.value)
                                 }
                                 placeholder="0"
                             />
 
-                            <InputError
-                                message={errors.stock}
-                            />
+                            <InputError message={errors.stock} />
                         </div>
                     </div>
 

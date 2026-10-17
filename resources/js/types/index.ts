@@ -14,6 +14,7 @@ export interface Product {
     name: string;
     description: string | null ;
     price: string;
+    purchase_price: string | number;
     stock: number;
     image: string | null ;
     is_active: boolean;

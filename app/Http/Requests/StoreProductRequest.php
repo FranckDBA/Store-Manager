@@ -44,6 +44,11 @@ class StoreProductRequest extends FormRequest
                 'numeric',
                 'min:0.01',
             ],
+            'purchase_price' => [
+                'required',
+                'numeric',
+                'min:0'
+            ],
 
             'stock' => [
                 'required',
