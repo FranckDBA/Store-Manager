@@ -6,6 +6,7 @@ use App\Http\Controllers\PosController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SalesHistoryController;
+use App\Http\Controllers\SaleController;
 use Illuminate\Support\Facades\Route;
 
 Route::inertia('/', 'welcome')->name('home');
@@ -36,6 +37,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // History
     Route::get('/sales/history', [SalesHistoryController::class, 'index'])
     ->name('sales.history');
+    // facture
+
+    Route::get('/sales/{sale}/invoice', [SaleController::class, 'invoice'])
+    ->name('sales.invoice');
 });
 
 require __DIR__ . '/settings.php';
